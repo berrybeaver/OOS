@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5a03c98-2cfe-4c46-85d1-faa01934dd55" name="Changes" comment="prak4">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="a5a03c98-2cfe-4c46-85d1-faa01934dd55" name="Changes" comment="private test geklappt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/IncomingTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/IncomingTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/OutgoingTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/OutgoingTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PaymentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/PrivateBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/PrivateBank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +47,15 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PrivateBankTest">
+  <component name="RunManager">
+    <configuration name="All in OOS_praktikum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOS_praktikum" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PaymentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOS_praktikum" />
       <option name="PACKAGE_NAME" value="" />
@@ -68,16 +70,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PrivateBankTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PrivateBankTest.addDuplicateTransactionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOS_praktikum" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PrivateBankTest" />
-      <option name="METHOD_NAME" value="addDuplicateTransactionTest(java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,11 +95,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in OOS_praktikum" />
         <item itemvalue="JUnit.PrivateBankTest" />
         <item itemvalue="JUnit.TransferTest" />
         <item itemvalue="JUnit.PaymentTest" />
         <item itemvalue="JUnit.PrivateBankTest.addValidTransactionValidAccountTest" />
-        <item itemvalue="JUnit.PrivateBankTest.addDuplicateTransactionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -119,7 +111,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670190709602</updated>
-      <workItem from="1670190710802" duration="2835000" />
+      <workItem from="1670190710802" duration="4431000" />
     </task>
     <task id="LOCAL-00001" summary="prak4">
       <created>1670190875038</created>
@@ -128,7 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670190875038</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="private test noch nicht">
+      <created>1670193570504</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670193570504</updated>
+    </task>
+    <task id="LOCAL-00003" summary="private test geklappt">
+      <created>1670193727025</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670193727025</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +153,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prak4" />
-    <option name="LAST_COMMIT_MESSAGE" value="prak4" />
+    <MESSAGE value="private test noch nicht" />
+    <MESSAGE value="private test geklappt" />
+    <option name="LAST_COMMIT_MESSAGE" value="private test geklappt" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

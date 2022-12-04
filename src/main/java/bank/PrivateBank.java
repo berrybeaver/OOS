@@ -345,81 +345,81 @@ public class PrivateBank implements Bank{
 
         return transactionsListByType;
     }
-        /**
-         * Persists the specified account in the file system (serialize then save into JSON)
-         * @throws IOException
-         * @param account the account to be written
-         */
-        private void writeAccount(String account) throws IOException {
+    /**
+     * Persists the specified account in the file system (serialize then save into JSON)
+     *
+     * @param account the account to be written
+     */
+    private void writeAccount(String account) {
 
-            try (FileWriter file = new FileWriter(getFullPath() + "/" + account + ".json")) {
+        try (FileWriter file = new FileWriter(getFullPath() + "/" + account + ".json")) {
 
-                file.write("[");
+            file.write("[");
 
-                for (Transaction transaction : accountsToTransactions.get(account)) {
-                    Gson gson = new GsonBuilder()
-                            .registerTypeAdapter(transaction.getClass(), new CustomDeSerializer())
-                            .setPrettyPrinting()
+            for (Transaction transaction : accountsToTransactions.get(account)) {
+                Gson gson = new GsonBuilder()
+                        .registerTypeAdapter(transaction.getClass(), new CustomDeSerializer())
+                        .setPrettyPrinting()
+                        .create();
+                String json = gson.toJson(transaction);
+                if (accountsToTransactions.get(account).indexOf(transaction) != 0)
+                    file.write(",");
+                file.write(json);
+            }
+
+            file.write("]");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * read all existing accounts from data system and make them available in PrivateBank object
+     * @throws AccountAlreadyExistsException
+     * @throws IOException
+     */
+    private void readAccounts() throws AccountAlreadyExistsException, IOException {
+
+        final File folder = new File(PrivateBank.this.getFullPath());
+        final File[] listOfFiles = Objects.requireNonNull(folder.listFiles());
+
+        for (File file : listOfFiles) {
+            String accountName = file.getName().replace(".json", "");
+            String accountNameFile = file.getName();
+            PrivateBank.this.createAccount(accountName);
+
+            try {
+
+                Reader reader = new FileReader(PrivateBank.this.getFullPath() + "/" + accountNameFile);
+                JsonArray parser = JsonParser.parseReader(reader).getAsJsonArray();
+                for (JsonElement jsonElement : parser.getAsJsonArray()) {
+
+                    JsonObject jsonObject = jsonElement.getAsJsonObject();
+
+                    Gson customGson = new GsonBuilder()
+                            .registerTypeAdapter(Transaction.class, new CustomDeSerializer())
                             .create();
-                    String json = gson.toJson(transaction);
-                    if (accountsToTransactions.get(account).indexOf(transaction) != 0)
-                        file.write(",");
-                    file.write(json);
+
+                    String str = customGson.toJson(jsonObject.get("INSTANCE"));
+
+                    if (jsonObject.get("CLASSNAME").getAsString().equals("Payment")) {
+                        Payment payment = customGson.fromJson(str, Payment.class);
+                        PrivateBank.this.addTransaction(accountName, payment);
+                    }
+                    else if (jsonObject.get("CLASSNAME").getAsString().equals("IncomingTransfer")) {
+                        IncomingTransfer incomingTransfer = customGson.fromJson(str, IncomingTransfer.class);
+                        PrivateBank.this.addTransaction(accountName, incomingTransfer);
+                    }
+                    else {
+                        OutgoingTransfer outgoingTransfer = customGson.fromJson(str, OutgoingTransfer.class);
+                        PrivateBank.this.addTransaction(accountName, outgoingTransfer);
+                    }
                 }
-
-                file.write("]");
-
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-        }
-        /**
-         * read all existing accounts from data system and make them available in PrivateBank object
-         * @throws AccountAlreadyExistsException
-         * @throws IOException
-         */
-        private void readAccounts() throws AccountAlreadyExistsException, IOException {
-
-            final File folder = new File(PrivateBank.this.getFullPath());
-            final File[] listOfFiles = Objects.requireNonNull(folder.listFiles());
-
-            for (File file : listOfFiles) {
-                String accountName = file.getName().replace(".json", "");
-                String accountNameFile = file.getName();
-                PrivateBank.this.createAccount(accountName);
-
-                try {
-
-                    Reader reader = new FileReader(PrivateBank.this.getFullPath() + "/" + accountNameFile);
-                    JsonArray parser = JsonParser.parseReader(reader).getAsJsonArray();
-                    for (JsonElement jsonElement : parser.getAsJsonArray()) {
-
-                        JsonObject jsonObject = jsonElement.getAsJsonObject();
-
-                        Gson customGson = new GsonBuilder()
-                                .registerTypeAdapter(Transaction.class, new CustomDeSerializer())
-                                .create();
-
-                        String str = customGson.toJson(jsonObject.get("INSTANCE"));
-
-                        if (jsonObject.get("CLASSNAME").getAsString().equals("Payment")) {
-                            Payment payment = customGson.fromJson(str, Payment.class);
-                            PrivateBank.this.addTransaction(accountName, payment);
-                        }
-                        else if (jsonObject.get("CLASSNAME").getAsString().equals("IncomingTransfer")) {
-                            IncomingTransfer incomingTransfer = customGson.fromJson(str, IncomingTransfer.class);
-                            PrivateBank.this.addTransaction(accountName, incomingTransfer);
-                        }
-                        else {
-                            OutgoingTransfer outgoingTransfer = customGson.fromJson(str, OutgoingTransfer.class);
-                            PrivateBank.this.addTransaction(accountName, outgoingTransfer);
-                        }
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (TransactionAlreadyExistException | AccountDoesNotExistException e) {
-                    System.out.println(e);
-                }
+            } catch (TransactionAlreadyExistException | AccountDoesNotExistException e) {
+                System.out.println(e);
             }
         }
     }
+}
