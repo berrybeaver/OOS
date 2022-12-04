@@ -90,7 +90,7 @@ public class PrivateBank implements Bank{
                 System.out.println("\nDirectory for " + PrivateBank.this.getName() + " is created!");
             }
             else {
-                System.out.println("\nDirectory for " + PrivateBank.this.getName() + " is already exist!");
+                System.out.println("\nDirectory for " + PrivateBank.this.getName() + " already exist!");
                 System.out.println("=> Start reading account(s) from directory to " + PrivateBank.this.getName() + ":");
                 readAccounts();
                 System.out.println("FINISHED reading account(s) for " + PrivateBank.this.getName() + "\n");
@@ -116,7 +116,7 @@ public class PrivateBank implements Bank{
                 Files.createDirectories(path);
                 System.out.println("\nDirectory for copied " + newPrivateBank.getName() + " is created!");
             } else {
-                System.out.println("\nDirectory for copied " + newPrivateBank.getName() + " is already exist!");
+                System.out.println("\nDirectory for copied " + newPrivateBank.getName() + " already exist!");
                 System.out.println("=> Start adding account(s) from directory to copied " + newPrivateBank.getName() + ":");
                 readAccounts();
                 System.out.println("FINISHED reading account(s) for copied " + newPrivateBank.getName() + "\n");
@@ -161,6 +161,8 @@ public class PrivateBank implements Bank{
         else {
             accountsToTransactions.put(account, List.of());
             System.out.println("=> SUCCESS!\n");
+            writeAccount(account);
+            System.out.println("=> SUCCESS!");
         }
     }
     /**
@@ -195,8 +197,8 @@ public class PrivateBank implements Bank{
             }
 
             accountsToTransactions.put(account, transactions);
-            System.out.println("=> SUCCESS!\n");
-
+            writeAccount(account);
+            System.out.println("=> SUCCESS!");
         }
     }
     /**
@@ -226,6 +228,7 @@ public class PrivateBank implements Bank{
                 List<Transaction> transactionList = new ArrayList<>(accountsToTransactions.get(account));
                 transactionList.add(transaction);
                 accountsToTransactions.put(account, transactionList);
+                writeAccount(account);
                 System.out.println("=> SUCCESS!\n");
             }
         }
@@ -255,6 +258,7 @@ public class PrivateBank implements Bank{
             List<Transaction> transactionList = new ArrayList<>(accountsToTransactions.get(account));
             transactionList.remove(transaction);
             accountsToTransactions.put(account, transactionList);
+            writeAccount(account);
             System.out.println("=> SUCCESS!\n");
         }
     }
