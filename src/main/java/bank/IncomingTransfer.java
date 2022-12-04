@@ -5,7 +5,7 @@ public class IncomingTransfer extends Transfer{
      * Konstruktor mit drei Attributen
      *
      * @param newDate     Wert für date
-     * @param description
+     * @param newDescription
      * @param newAmount   Wert für amount
      */
     public IncomingTransfer(String newDate, String newDescription, double newAmount) {

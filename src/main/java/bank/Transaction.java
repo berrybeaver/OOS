@@ -57,6 +57,10 @@ public abstract class Transaction implements CalculateBill {
         return amount;
     }
 
+    public double calculate(){
+        return amount;
+    }
+
     //konstruktoren
     /**
      * Defaultkonstruktor für abstrakte Klasse
@@ -79,7 +83,7 @@ public abstract class Transaction implements CalculateBill {
      * @return den Inhalt aller Klassenattribute
      */
     public String toString() {
-        return "Date: " + date + ", Description: " + description + ", Amount: " + amount + " €";
+        return "Date: " + date + ", Description: " + description + ", Amount: " + calculate() + " €";
     }
 
     /**

@@ -13,7 +13,7 @@ public class PaymentTest {
     public static void setUp() {
         System.out.println("Set up for Payment objects");
         payment1 = new Payment("12.03.2008", 321, "Payment 01");
-        payment2 = new Payment("23.09.1897", -2500, "Payment 02");
+        payment2 = new Payment("23.09.1897", -2500, "Payment 02", 0.8, 0.5);
         copyPayment = new Payment(payment2);
     }
 
@@ -70,7 +70,7 @@ public class PaymentTest {
 
     @Test
     public void toStringTester() {
-        String string = "Date: 23.09.1897, Description: Payment 02, Amount: -3750.0 €, Incoming Interest: 0.8, Outgoing Interest: 0.5\n";
+        String string = "Date: 23.09.1897, Description: Payment 02, Amount: -2500.0 €, Incoming Interest: 0.8, Outgoing Interest: 0.5\n";
         assertEquals(string, payment2.toString());
     }
 

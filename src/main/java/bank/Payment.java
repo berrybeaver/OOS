@@ -124,7 +124,7 @@ public class Payment extends Transaction  {
      */
     @Override
     public String toString() {
-        return super.toString() + ", Incoming Interest: " + incomingInterest + ", outgoing Interest: " + outcomingInterest + "\n";
+        return "Date: " + date + ", Description: " + description + ", Amount: " + amount + " €" + ", Incoming Interest: " + incomingInterest + ", Outgoing Interest: " + outcomingInterest + "\n";
     }
 
     /**

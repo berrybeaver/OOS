@@ -5,12 +5,10 @@ public class OutgoingTransfer extends Transfer {
      * Konstruktor mit drei Attributen
      *
      * @param newDate        Wert für date
-     * @param description
      * @param newAmount      Wert für amount
      * @param newDescription Wert für description
-     * @param recipient
      */
-    public OutgoingTransfer(String newDate, String description, double newAmount, String newDescription, String recipient) {
+    public OutgoingTransfer(String newDate, String newDescription, double newAmount) {
         super(newDate, newAmount, newDescription);
     }
 
@@ -23,7 +21,7 @@ public class OutgoingTransfer extends Transfer {
      * @param newSender      Wert für sender
      * @param newRecipient   Wert für recipient
      */
-    public OutgoingTransfer(String newDate, double newAmount, String newDescription, String newSender, String newRecipient) {
+    public OutgoingTransfer(String newDate, String newDescription, double newAmount, String newSender, String newRecipient) {
         super(newDate, newAmount, newDescription, newSender, newRecipient);
     }
 

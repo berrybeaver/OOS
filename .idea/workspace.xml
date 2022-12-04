@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5a03c98-2cfe-4c46-85d1-faa01934dd55" name="Changes" comment="" />
+    <list default="true" id="a5a03c98-2cfe-4c46-85d1-faa01934dd55" name="Changes" comment="prak4">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/IncomingTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/IncomingTransfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/OutgoingTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/OutgoingTransfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PaymentTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IT1M2wZmk13MDT2xgZb7XuJe4m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -20,9 +35,82 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/andre/github/OOS_praktikum"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\github\OOS_praktikum" />
+      <recent name="C:\Users\andre\github\OOS_praktikum\src\test\java" />
+      <recent name="C:\Users\andre\github\OOS_praktikum\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PrivateBankTest">
+    <configuration name="PaymentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOS_praktikum" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PaymentTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrivateBankTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOS_praktikum" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PrivateBankTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrivateBankTest.addDuplicateTransactionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOS_praktikum" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PrivateBankTest" />
+      <option name="METHOD_NAME" value="addDuplicateTransactionTest(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrivateBankTest.addValidTransactionValidAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOS_praktikum" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PrivateBankTest" />
+      <option name="METHOD_NAME" value="addValidTransactionValidAccountTest(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransferTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOS_praktikum" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransferTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PrivateBankTest" />
+        <item itemvalue="JUnit.TransferTest" />
+        <item itemvalue="JUnit.PaymentTest" />
+        <item itemvalue="JUnit.PrivateBankTest.addValidTransactionValidAccountTest" />
+        <item itemvalue="JUnit.PrivateBankTest.addDuplicateTransactionTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -31,7 +119,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670190709602</updated>
+      <workItem from="1670190710802" duration="2835000" />
     </task>
+    <task id="LOCAL-00001" summary="prak4">
+      <created>1670190875038</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670190875038</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="prak4" />
+    <option name="LAST_COMMIT_MESSAGE" value="prak4" />
   </component>
 </project>
