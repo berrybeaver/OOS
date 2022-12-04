@@ -216,7 +216,7 @@ public class PrivateBank implements Bank{
             throw new AccountDoesNotExistException("ACCOUNT <" + account + "> DOES NOT EXISTS!\n");
         }
         else {
-            if(accountsToTransactions.get(account).contains(transaction)){
+            if(containsTransaction(account, transaction)){
                 throw new TransactionAlreadyExistException("THIS TRANSACTION ALREADY EXIST!\n");
             } else{
                 if(transaction instanceof Payment payment){
