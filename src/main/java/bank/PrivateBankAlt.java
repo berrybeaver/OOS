@@ -2,6 +2,7 @@ package bank;
 
 import bank.exceptions.*;
 
+import java.io.IOException;
 import java.util.*;
 
     public class PrivateBankAlt implements Bank{
@@ -273,6 +274,16 @@ import java.util.*;
             System.out.println(transactionsListByType.toString().replace("[", "\t\t").replace("]","").replace("\n, ", "\n\t\t"));
 
             return transactionsListByType;
+        }
+
+        @Override
+        public void deleteAccount(String account) throws AccountDoesNotExistException, IOException {
+
+        }
+
+        @Override
+        public List<String> getAllAccounts() {
+            return null;
         }
 
     }

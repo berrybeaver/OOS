@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5a03c98-2cfe-4c46-85d1-faa01934dd55" name="Changes" comment="private test geklappt">
+    <list default="true" id="a5a03c98-2cfe-4c46-85d1-faa01934dd55" name="Changes" comment="write in funktionen addiert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/PrivateBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/PrivateBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/PrivateBankAlt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/PrivateBankAlt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +50,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in OOS_praktikum">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="OOS_praktikum" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in OOS_praktikum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOS_praktikum" />
       <option name="PACKAGE_NAME" value="" />
@@ -74,16 +84,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrivateBankTest.addValidTransactionValidAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOS_praktikum" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PrivateBankTest" />
-      <option name="METHOD_NAME" value="addValidTransactionValidAccountTest(java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TransferTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOS_praktikum" />
       <option name="PACKAGE_NAME" value="" />
@@ -95,11 +95,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in OOS_praktikum" />
         <item itemvalue="JUnit.PrivateBankTest" />
         <item itemvalue="JUnit.TransferTest" />
         <item itemvalue="JUnit.PaymentTest" />
-        <item itemvalue="JUnit.PrivateBankTest.addValidTransactionValidAccountTest" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +112,10 @@
       <option name="presentableId" value="Default" />
       <updated>1670190709602</updated>
       <workItem from="1670190710802" duration="4748000" />
-      <workItem from="1670196643236" duration="376000" />
+      <workItem from="1670196643236" duration="796000" />
+      <workItem from="1670408230781" duration="766000" />
+      <workItem from="1671226250927" duration="819000" />
+      <workItem from="1671389376644" duration="3087000" />
     </task>
     <task id="LOCAL-00001" summary="prak4">
       <created>1670190875038</created>
@@ -142,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670195592986</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="write in funktionen addiert">
+      <created>1670197220608</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670197220608</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +173,7 @@
     <MESSAGE value="prak4" />
     <MESSAGE value="private test noch nicht" />
     <MESSAGE value="private test geklappt" />
-    <option name="LAST_COMMIT_MESSAGE" value="private test geklappt" />
+    <MESSAGE value="write in funktionen addiert" />
+    <option name="LAST_COMMIT_MESSAGE" value="write in funktionen addiert" />
   </component>
 </project>

@@ -2,6 +2,7 @@ package bank;
 
 import bank.exceptions.*;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -97,4 +98,17 @@ public interface Bank {
      * @return the list of all transactions by type
      */
     List<Transaction> getTransactionsByType(String account, boolean positive);
+
+    /**
+     * delete an account in accountsToTransactions and in data system
+     * @param account account to be deleted
+     * @throws AccountDoesNotExistException when account is not valid
+     */
+    public void deleteAccount(String account) throws AccountDoesNotExistException, IOException;
+
+    /**
+     * show all accounts in accountsToTransactions
+     * @return a list of all accounts
+     */
+    public List<String> getAllAccounts();
 }
