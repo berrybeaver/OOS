@@ -24,7 +24,7 @@
             <plugin>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <groupId>org.openjfx</groupId>
-                <version>${javafx.maven.plugin.version}</version>
+                <version>0.0.8</version>
                 <configuration>
                     <mainClass>com.oos.praktikum05.MainApplication</mainClass>
                 </configuration>
@@ -46,12 +46,12 @@
         <dependency>
             <artifactId>javafx-controls</artifactId>
             <groupId>org.openjfx</groupId>
-            <version>${javafx.version}</version>
+            <version>17.0.1</version>
         </dependency>
         <dependency>
             <artifactId>javafx-fxml</artifactId>
             <groupId>org.openjfx</groupId>
-            <version>${javafx.version}</version>
+            <version>17.0.1</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

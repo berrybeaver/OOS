@@ -9,7 +9,8 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
-import static jdk.xml.internal.SecuritySupport.getClassLoader;
+//import static jdk.xml.internal.SecuritySupport.getClassLoader;
+
 
 
 public class MainApplication extends Application {
@@ -17,7 +18,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClassLoader().getResource("com/oos/praktikum05/main-view.fxml")));
+        Parent fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-view.fxml")));
         Scene scene = new Scene(fxmlLoader);
         primaryStage.setTitle("MainViewApplication");
         primaryStage.setScene(scene);

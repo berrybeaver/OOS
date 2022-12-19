@@ -74,7 +74,7 @@ public class MainController implements Initializable {
             // goes to AccountView if double-click on item
             if (mouseEvent.getClickCount() == 2)
                 try {
-                    FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("com/oos/praktikum05/account-view.fxml")));
+                    FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("account-view.fxml")));
                     root = loader.load();
 
                     AccountController accountController = loader.getController();
@@ -116,7 +116,7 @@ public class MainController implements Initializable {
             stage = (Stage) root.getScene().getWindow();
 
             try {
-                FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("com/oos/praktikum05/account-view.fxml")));
+                FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("account-view.fxml")));
                 root = loader.load();
 
                 AccountController accountController = loader.getController();

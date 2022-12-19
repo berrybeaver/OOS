@@ -294,7 +294,7 @@ public class AccountController implements Initializable {
 
         backButton.setOnMouseClicked(mouseEvent -> {
             try {
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("com/oos/praktikum05/main-view.fxml")));
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-view.fxml")));
             } catch (IOException e) {
                 e.printStackTrace();
             }
