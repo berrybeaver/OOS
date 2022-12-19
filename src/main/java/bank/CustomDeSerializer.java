@@ -14,15 +14,18 @@ public class CustomDeSerializer implements JsonSerializer<Transaction>, JsonDese
         if (jsonObject.get("CLASSNAME").getAsString().equals("Payment"))
             return new Payment(
                     jsonObject.get("date").getAsString(),
+                    jsonObject.get("description").getAsString(),
                     jsonObject.get("amount").getAsDouble(),
-                    jsonObject.get("description").getAsString()
-            );
+                    jsonObject.get("incomingInterest").getAsDouble(),
+                    jsonObject.get("outgoingInterest").getAsDouble());
 
         else if (jsonObject.get("CLASSNAME").getAsString().equals("IncomingTransfer"))
             return new IncomingTransfer(
                     jsonObject.get("date").getAsString(),
                     jsonObject.get("description").getAsString(),
-                    jsonObject.get("amount").getAsDouble()
+                    jsonObject.get("amount").getAsDouble(),
+                    jsonObject.get("sender").getAsString(),
+                    jsonObject.get("recipient").getAsString()
             );
         else
             return new OutgoingTransfer(
@@ -32,11 +35,11 @@ public class CustomDeSerializer implements JsonSerializer<Transaction>, JsonDese
                     jsonObject.get("sender").getAsString(),
                     jsonObject.get("recipient").getAsString()
             );
-
     }
 
     @Override
     public JsonElement serialize(Transaction transaction, Type type, JsonSerializationContext jsonSerializationContext) {
+
         JsonObject jsonTransaction = new JsonObject();
         JsonObject jsonObject = new JsonObject();
 
@@ -46,7 +49,7 @@ public class CustomDeSerializer implements JsonSerializer<Transaction>, JsonDese
         }
         else if (transaction instanceof Payment payment) {
             jsonTransaction.addProperty("incomingInterest", payment.getIncomingInterest());
-            jsonTransaction.addProperty("outgoingInterest", payment.getOutcomingInterest());
+            jsonTransaction.addProperty("outgoingInterest", payment.getOutgoingInterest());
         }
         jsonTransaction.addProperty("date", transaction.get_date());
         jsonTransaction.addProperty("amount", transaction.getAmount());

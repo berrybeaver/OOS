@@ -74,7 +74,7 @@ public class PrivateBank implements Bank{
     /**
      * Constructor with four attributes
      */
-    public PrivateBank(String newName, String newDirectoryName, double newIncomingInterest, double newOutgoingInterest) throws AccountAlreadyExistsException {
+    public PrivateBank(String newName, String newDirectoryName, double newIncomingInterest, double newOutgoingInterest) {
         this.name = newName;
         this.directoryName = newDirectoryName;
         this.incomingInterest = newIncomingInterest;
@@ -90,14 +90,16 @@ public class PrivateBank implements Bank{
                 System.out.println("\nDirectory for " + PrivateBank.this.getName() + " is created!");
             }
             else {
-                System.out.println("\nDirectory for " + PrivateBank.this.getName() + " already exist!");
+                System.out.println("\nDirectory for " + PrivateBank.this.getName() + " is already exist!");
                 System.out.println("=> Start reading account(s) from directory to " + PrivateBank.this.getName() + ":");
                 readAccounts();
                 System.out.println("FINISHED reading account(s) for " + PrivateBank.this.getName() + "\n");
             }
-        } catch (IOException e) {
+        } catch (IOException | AccountAlreadyExistsException e) {
             System.out.println("Failed to create directory for " + PrivateBank.this.getName() + "!");
         }
+
+
     }
 
     /**
@@ -154,13 +156,21 @@ public class PrivateBank implements Bank{
      * @throws AccountAlreadyExistsException if the account ALREADY EXISTS
      */
     @Override
-    public void createAccount(String account) throws AccountAlreadyExistsException {
-        System.out.println("Creating new account <" + account + "> to bank <" + name + ">");
-        if (accountsToTransactions.containsKey(account))
-            throw new AccountAlreadyExistsException("ACCOUNT <" + account +"> ALREADY EXISTS!\n");
+    public void createAccount(String account) throws AccountAlreadyExistsException, IOException {
+        Path path = Path.of(PrivateBank.this.getFullPath() + "/" + account + ".json");
+
+        if (Files.exists(path)) {
+            System.out.print("\nAdding <" + account + "> from the data system to bank <" + name + "> " );
+            if (accountsToTransactions.containsKey(account))
+                throw new AccountAlreadyExistsException("=> FAILED! ACCOUNT <" + account + "> ALREADY EXISTS!\n");
+            else {
+                accountsToTransactions.put(account, List.of());
+                System.out.println("=> SUCCESS!");
+            }
+        }
         else {
+            System.out.print("\nCreating new account <" + account + "> to bank <" + name + "> ");
             accountsToTransactions.put(account, List.of());
-            System.out.println("=> SUCCESS!\n");
             writeAccount(account);
             System.out.println("=> SUCCESS!");
         }
@@ -185,7 +195,7 @@ public class PrivateBank implements Bank{
             for (Transaction valueOfTransactions : transactions) {
                 if (valueOfTransactions instanceof Payment payment) {
                     payment.setIncomingInterest(PrivateBank.this.incomingInterest);
-                    payment.setOutcomingInterest(PrivateBank.this.outgoingInterest);
+                    payment.setOutgoingInterest(PrivateBank.this.outgoingInterest);
                     /**
                     if(payment.getIncomingInterest() <= 0 || payment.getIncomingInterest() >= 1){
                         throw new TransactionAttributeException("INCOMING INTEREST MUST BE IN BETWEEN 0 AND 1!\n");
@@ -223,7 +233,7 @@ public class PrivateBank implements Bank{
             } else{
                 if(transaction instanceof Payment payment){
                     payment.setIncomingInterest(PrivateBank.this.incomingInterest);
-                    payment.setOutcomingInterest(PrivateBank.this.outgoingInterest);
+                    payment.setOutgoingInterest(PrivateBank.this.outgoingInterest);
                 }
                 List<Transaction> transactionList = new ArrayList<>(accountsToTransactions.get(account));
                 transactionList.add(transaction);
@@ -248,7 +258,7 @@ public class PrivateBank implements Bank{
         System.out.println("Removing transaction <" + transaction.toString().replace("\n", "") + "> from account <" + account + "> in bank <" + name + ">");
         if (transaction instanceof Payment payment) {
             payment.setIncomingInterest(PrivateBank.this.incomingInterest);
-            payment.setOutcomingInterest(PrivateBank.this.outgoingInterest);
+            payment.setOutgoingInterest(PrivateBank.this.outgoingInterest);
         }
         if(!accountsToTransactions.get(account).contains(transaction)){
             throw new TransactionDoesNotExistException("THIS TRANSACTION DOES NOT EXISTS!\n");
@@ -272,7 +282,7 @@ public class PrivateBank implements Bank{
     public boolean containsTransaction(String account, Transaction transaction){
         if (transaction instanceof Payment payment){
             payment.setIncomingInterest(PrivateBank.this.incomingInterest);
-            payment.setOutcomingInterest(PrivateBank.this.outgoingInterest);
+            payment.setOutgoingInterest(PrivateBank.this.outgoingInterest);
         }
         System.out.println("Checking account <" + account + "> contains the transaction <" + transaction.toString().replace("\n", "") + "> : " + accountsToTransactions.get(account).contains(transaction) + "\n");
         return accountsToTransactions.get(account).contains(transaction);
@@ -379,8 +389,8 @@ public class PrivateBank implements Bank{
     }
     /**
      * read all existing accounts from data system and make them available in PrivateBank object
-     * @throws AccountAlreadyExistsException
-     * @throws IOException
+     * @throws AccountAlreadyExistsException when account already exist
+     * @throws IOException io
      */
     private void readAccounts() throws AccountAlreadyExistsException, IOException {
 

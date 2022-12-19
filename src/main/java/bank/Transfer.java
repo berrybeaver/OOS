@@ -68,32 +68,34 @@ public class Transfer extends Transaction {
     }
     /**
      * Konstruktor mit drei Attributen
-     * @param date Wert für date
-     * @param description Wert für description
-     * @param amount Wert für amount
+     * @param newDate Wert für date
+     * @param newDescription Wert für description
+     * @param newAmount Wert für amount
      */
-    public Transfer(String date, double amount, String description) {
-        super(date, description, amount);
+    public Transfer(String newDate, String newDescription, double newAmount) {
+        super(newDate, newDescription, newAmount);
     }
+
     /**
-     * Konstruktor mit fünf Attributen
-     * @param date Wert für date
-     * @param description Wert für description
-     * @param amount Wert für amount
-     * @param sender Wert für sender
-     * @param recipient Wert für recipient
+     * Konstruktor mit aller Attributen
+     * @param newDate Wert für date
+     * @param newDescription Wert für description
+     * @param newAmount Wert für amount
+     * @param newSender Wert für sender
+     * @param newRecipient Wert für recipient
      */
-    public Transfer(String date, double amount, String description, String sender, String recipient){
-        this(date, amount, description);
-        setSender(sender);
-        setRecipient(recipient);
+    public Transfer(String newDate, String newDescription, double newAmount, String newSender, String newRecipient) {
+        this(newDate, newDescription, newAmount);
+        this.sender = newSender;
+        this.recipient = newRecipient;
     }
+
     /**
-     * Copy Konstruktor
-     * @param Transfer kopieren
-     * */
-    public Transfer(Transfer Transfer){
-        this(Transfer.date, Transfer.amount, Transfer.description, Transfer.sender, Transfer.recipient );
+     * Copy Constructor
+     * @param newTransfer neue Objekt festzulegen
+     */
+    public Transfer(Transfer newTransfer) {
+        this(newTransfer.date, newTransfer.description, newTransfer.amount, newTransfer.sender, newTransfer.recipient);
     }
     public void printObject(){
         System.out.println("-----Transfer-----");

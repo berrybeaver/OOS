@@ -9,7 +9,7 @@ public class IncomingTransfer extends Transfer{
      * @param newAmount   Wert für amount
      */
     public IncomingTransfer(String newDate, String newDescription, double newAmount) {
-        super(newDate, newAmount, newDescription);
+        super(newDate, newDescription, newAmount);
     }
 
     /**
@@ -21,8 +21,8 @@ public class IncomingTransfer extends Transfer{
      * @param newSender      Wert für sender
      * @param newRecipient   Wert für recipient
      */
-    public IncomingTransfer(String newDate, double newAmount, String newDescription, String newSender, String newRecipient) {
-        super(newDate, newAmount, newDescription, newSender, newRecipient);
+    public IncomingTransfer(String newDate, String newDescription, double newAmount, String newSender, String newRecipient) {
+        super(newDate, newDescription, newAmount, newSender, newRecipient);
     }
 
     /**
